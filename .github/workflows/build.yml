@@ -23,7 +23,7 @@ jobs:
           chmod -R 755 gradle
 
       - name: Build APK
-        run: ./gradlew assembleRelease
+        run: ./gradlew :app:assembleRelease
 
       - name: Find APK
         run: find . -name "*.apk"
