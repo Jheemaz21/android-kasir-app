@@ -1,24 +1,25 @@
 plugins {
     id 'com.android.application'
-    id 'kotlin-android'
-    id 'kotlin-kapt'
 }
 
 android {
-    namespace "com.kasir.app"
+    namespace "com.example.kasir"
     compileSdk 34
 
     defaultConfig {
-        applicationId "com.kasir.app"
+        applicationId "com.example.kasir"
         minSdk 21
         targetSdk 34
         versionCode 1
         versionName "1.0"
     }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+        }
+    }
 }
 
 dependencies {
-    implementation "androidx.appcompat:appcompat:1.7.0"
-    implementation "androidx.room:room-runtime:2.6.1"
-    kapt "androidx.room:room-compiler:2.6.1"
 }
