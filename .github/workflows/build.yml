@@ -25,8 +25,12 @@ jobs:
       - name: Build APK
         run: ./gradlew assembleRelease
 
-      - uses: actions/upload-artifact@v4
+      - name: Find APK
+        run: find . -name "*.apk"
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
         with:
           name: kasir-apk
-          path: app/build/outputs/apk/release/*.apk
-
+          path: |
+            **/build/outputs/apk/**/*.apk
